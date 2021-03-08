@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/template', function () {
+    return view('template');
+});
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+Route::get('/admin/sop', function () {
+    return view('admin.sop.index');
+});
 
 Auth::routes();
 

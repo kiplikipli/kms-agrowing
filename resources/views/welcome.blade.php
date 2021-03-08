@@ -1,102 +1,74 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Sayang Kipli</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-        @PWA
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+@section('content')
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper background">
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6 logo-agrowing" style="background-color:white">
+            <div class="rounded p-4 p-md-5">
+              <div class="container" >
+                <img src="img/logo-agrowing-ori.png" alt="Logo Agrowing" width="400" height="91">
+              </div>
+              <form id="login-form" enctype="multipart/form-data" role="form" action="#" method="post">
+               @csrf
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <p>Sayang kipliii</p>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                
+                <div class="col-sm-6">
+                <div class="row">
+                  <div class="form-group clearfix">
+                  <label for="exampleInputRadio1">Masuk sebagai:</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked>
+                        <label class="form-check-label">Admin</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked>
+                        <label class="form-check-label">Manajer Kebun</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked>
+                        <label class="form-check-label">Pakar Buah</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked>
+                        <label class="form-check-label">Pengguna Umum</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked>
+                        <label class="form-check-label">Pemilik Lahan</label>
+                      </div>
+                  </div>
                 </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" id="submit">Masuk</button>
+                </div>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
-    </body>
-</html>
+      </div>
+    </div>
+  </div>
+   <!-- Main Footer -->
+   <footer class="main-footer">
+    <strong>Copyright &copy; 2021 <a href="http://agrowing.co.id">Agrowing.co.id</a>.</strong>
+    Developed by IPB final year students.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+
+@endsection
