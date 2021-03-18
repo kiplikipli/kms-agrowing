@@ -26,10 +26,17 @@
   <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
 
+  <link href="{{ asset('assets/admin/css/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+
+  <!-- Bootstrap -->
+  <link href="{{ asset('assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />       
+  <!-- Main Css -->
+  <link href="{{ asset('assets/admin/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body data-keep-enlarged="false" class="hold-transition sidebar-mini layout-navbar-fixed">
+<div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -63,7 +70,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -79,7 +86,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -95,7 +102,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="public/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -147,21 +154,19 @@
   </nav>
   <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a class="brand-link" href="/home">
-      <div class="p-3">
-      <img src="img/logo-agrowing-ori.png" alt="AdminKMS Logo" class="brand-image"
-          style="opacity: .8">
-          <p class="brand-text font-weight-light"></p>
-      </div>
-    </a>
+  <aside class="main-sidebar sidebar-light-success elevation-4">
+    <div class="brand-link logo-box pt-2 pl-3">
+      <a href="#" class="logo">
+          <span class="logo-sm">
+              <img src="img/logo-agrowing-ori.png" alt="" width="90%" class="sm-img">
+          </span>
+      </a>
+    </div>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 pt-2 d-flex">
         <div class="image">
           <img src="img/Jeruk-Baby-Pacitan.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
@@ -252,16 +257,29 @@
     <!-- /.sidebar -->
   </aside>
 
-  <main>
-    @yield('content')
-  </main>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        @yield('header')
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        @yield('content')
+      </div>
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
   <footer class="main-footer">
-    <strong>Copyright &copy; 2021 <a href="http://agrowing.co.id">Agrowing.co.id</a>.</strong>
-    Developed by IPB final year students.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.0.5
     </div>
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    reserved.
   </footer>
 
   <!-- Control Sidebar -->
