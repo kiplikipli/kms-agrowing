@@ -204,3 +204,15 @@
 
 .input-group [data-toggle="datetimepicker"] {
   cursor: pointer; }
+
+
+/* tambahan css */
+.card-box {
+  background-color: #fff;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0.5rem;
+  -webkit-box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+          box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+  border-radius: 0.25rem; }

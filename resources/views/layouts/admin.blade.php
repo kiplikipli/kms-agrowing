@@ -30,9 +30,7 @@
   <link href="{{ asset('assets/admin/css/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 
   <!-- Bootstrap -->
-  <link href="{{ asset('assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />       
-  <!-- Main Css -->
-  <link href="{{ asset('assets/admin/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+  <!-- <link href="{{ asset('assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />      -->
 </head>
 
 <body data-keep-enlarged="false" class="hold-transition sidebar-mini layout-navbar-fixed">
@@ -158,7 +156,7 @@
     <div class="brand-link logo-box pt-2 pl-3">
       <a href="#" class="logo">
           <span class="logo-sm">
-              <img src="img/logo-agrowing-ori.png" alt="" width="90%" class="sm-img">
+              <img src="{{ asset('img/logo-agrowing-ori.png') }}" alt="" width="90%" class="sm-img">
           </span>
       </a>
     </div>
@@ -168,7 +166,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 pt-2 d-flex">
         <div class="image">
-          <img src="img/Jeruk-Baby-Pacitan.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('img/Jeruk-Baby-Pacitan.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Admin KMS Agrowing</a>
@@ -181,7 +179,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="/admin" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -191,7 +189,7 @@
 
           <li class="nav-header">LAPORAN</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/laporan" class="nav-link">
               <i class="nav-icon fas fa-file-alt"></i>
               <p>
                 Laporan Harian
@@ -209,7 +207,7 @@
 
           <li class="nav-header">DATA</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/petani" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Petani
@@ -217,7 +215,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/lahan" class="nav-link">
               <i class="nav-icon fas fa-map-marked-alt"></i>
               <p>
                 Lahan
@@ -275,11 +273,11 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.0.5
+    <strong>Copyright &copy; 2021 <a href="http://agrowing.co.id">Agrowing.co.id</a>.</strong>
+    Developed by IPB final year students.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-    reserved.
   </footer>
 
   <!-- Control Sidebar -->

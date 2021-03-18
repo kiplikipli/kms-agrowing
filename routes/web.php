@@ -20,10 +20,22 @@ Route::get('/template', function () {
     return view('template');
 });
 Route::get('/admin', function () {
-    return view('admin.dashboard');
+    return view('page.admin.dashboard');
 });
 Route::get('/admin/sop', function () {
-    return view('admin.sop.index');
+    return view('page.admin.sop.index');
+});
+Route::get('/admin/laporan', function () {
+    return view('page.admin.laporan_harian.index');
+});
+Route::get('/admin/petani', function () {
+    return view('page.admin.petani.index');
+});
+Route::get('/admin/petani/tambah', function () {
+    return view('page.admin.petani.tambah');
+});
+Route::get('/admin/lahan', function () {
+    return view('page.admin.lahan.index');
 });
 
 Auth::routes();
