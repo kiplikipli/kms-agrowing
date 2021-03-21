@@ -20,8 +20,6 @@
   <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.css') }}">
   <!-- Google Font: Source Sans Pro -->
@@ -38,7 +36,7 @@
 <body data-keep-enlarged="false" class="hold-transition sidebar-mini layout-navbar-fixed">
 <div class="wrapper">
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color:#86BC42">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -46,16 +44,15 @@
       </li>
     </ul>
 
-    <!-- SEARCH FORM -->
     <!-- <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
+        <div class="input-group input-group-sm">
+            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+            <button class="btn btn-navbar" type="submit" style="background-color:orange">
+                <i class="fas fa-search"></i>
+            </button>
+            </div>
         </div>
-      </div>
     </form> -->
 
     <!-- Right navbar links -->
@@ -145,11 +142,6 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -165,93 +157,43 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 pt-2 d-flex">
-        <div class="image">
-          <img src="{{ asset('img/Jeruk-Baby-Pacitan.jpg') }}" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Admin KMS Agrowing</a>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="/admin" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-header">LAPORAN</li>
-          <li class="nav-item">
-            <a href="/admin/laporan" class="nav-link">
-              <i class="nav-icon fas fa-file-alt"></i>
-              <p>
-                Laporan Harian
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-file-alt"></i>
-              <p>
-                Laporan Per Tahapan
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-header">DATA</li>
-          <li class="nav-item">
-            <a href="/admin/petani" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Petani
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/admin/lahan" class="nav-link">
-              <i class="nav-icon fas fa-map-marked-alt"></i>
-              <p>
-                Lahan
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-header">SOP</li>
-          <li class="nav-item">
-            <a href="/admin/sop" class="nav-link">
-              <i class="nav-icon fas fa-th-list"></i>
-              <p>
-                Daftar Panduan
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/admin/sop/tambah" class="nav-link">
-              <i class="nav-icon fas fa-folder-plus"></i>
-              <p>
-                Tambah Panduan
-              </p>
-            </a>
-          </li>
-          
-          <li class="nav-header">KONSULTASI</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-comments"></i>
-              <p>Konsultasi</p>
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="mt-3">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+                `<li class="nav-item">
+                    <a href="/" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>
+                    <p>
+                        Beranda
+                    </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/proyek" class="nav-link">
+                    <i class="nav-icon fas fa-file-alt"></i>
+                    <p>
+                        Project Tanam
+                    </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/konsultasi" class="nav-link">
+                    <i class="nav-icon fas fa-comments"></i>
+                    <p>Konsultasi</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/profil" class="nav-link">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>
+                        Profil Saya
+                    </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -276,7 +218,6 @@
 
   <footer class="main-footer">
     <strong>Copyright &copy; 2021 <a href="http://agrowing.co.id">Agrowing.co.id</a>.</strong>
-    Developed by IPB final year students.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0
     </div>
@@ -311,7 +252,6 @@
 <script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
 <!-- daterangepicker -->
 <script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
-<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->

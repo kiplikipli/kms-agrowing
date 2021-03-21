@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('welcome');
 });
 Route::get('/template', function () {
     return view('template');
 });
+
+// ====== Route untuk Admin ======
 Route::get('/admin', function () {
     return view('page.admin.dashboard');
 });
@@ -32,10 +34,42 @@ Route::get('/admin/petani', function () {
     return view('page.admin.petani.index');
 });
 Route::get('/admin/petani/tambah', function () {
-    return view('page.admin.petani.tambah');
+    return view('page.admin.petani.add');
 });
 Route::get('/admin/lahan', function () {
     return view('page.admin.lahan.index');
+});
+Route::get('/admin/sop', function () {
+    return view('page.admin.sop.index');
+});
+Route::get('/admin/sop/tambah', function () {
+    return view('page.admin.sop.add');
+});
+
+// ====== Route untuk Manajer Kebun ======
+Route::get('/', function () {
+    return view('page.user.home');
+});
+Route::get('/proyek', function () {
+    return view('page.user.project.index');
+});
+Route::get('/proyek/tambah', function () {
+    return view('page.user.project.add');
+});
+Route::get('/konsultasi', function () {
+    return view('page.user.konsultasi.index');
+});
+Route::get('/konsultasi/tambah', function () {
+    return view('page.user.konsultasi.add');
+});
+Route::get('/profil', function () {
+    return view('page.user.profile.index');
+});
+Route::get('/profil/edit', function () {
+    return view('page.user.profile.edit');
+});
+Route::get('/pencatatan/1', function () {
+    return view('page.user.pencatatan.index');
 });
 
 Auth::routes();

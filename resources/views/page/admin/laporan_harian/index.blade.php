@@ -14,7 +14,7 @@
 @section('content')
 <div class="row">
   <!-- Left col -->
-  <section class="col-lg-10 connectedSortable">
+  <section class="col-12 connectedSortable">
     <!-- Custom tabs (Charts with tabs)-->
     <div class="card">
       <div class="card-body">
@@ -22,13 +22,13 @@
           <table class="table table-striped projects">
               <thead>
                 <tr style="background-color:#EB9B04; color:white">
-                  <th style="width: 1%">#</th>
-                  <th style="width: 20%">DATE</th>
+                  <th style="width: 5%">#</th>
+                  <th style="width: 17%">DATE</th>
                   <th style="width: 15%">PETANI</th>
                   <th style="width: 15%">LOKASI LAHAN</th>
                   <th style="width: 15%">PRODUK</th>
                   <th style="width: 20%">AKTIVITAS</th>
-                  <th style="width: 13%">AKSI</th>
+                  <th style="width: 13%; text-align: center">AKSI</th>
                 </tr>
               </thead>
               <tbody>

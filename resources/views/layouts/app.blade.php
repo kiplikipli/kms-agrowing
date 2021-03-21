@@ -10,13 +10,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>KMS Agrowing</title>
-
+  <!-- Icons -->
+  <link href="{{ asset('css/materialdesignicons.min.css') }}" rel="stylesheet" type="text/css">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
   <style>
     .navbar-awal{
       background-color:#86BC42
@@ -30,41 +32,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
       background-repeat: no-repeat;
       background-size: cover;
     }
-    .logo-agrowing{
-      left: 100px;
-      top: 50px;
+    .center{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
     }
   </style>
 
 </head>
-<body class="hold-transition layout-top-nav">
+<body data-keep-enlarged="false" class="hold-transition layout-top-nav">
 <div class="wrapper">
-
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
+  
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md navbar-light navbar-awal">
-    <div class="container" style="height:40px;">
-
-    </div>
+  <nav class="main-header navbar navbar-expand-md navbar-awal">
+    <div class="container" style="height:40px;"></div>
   </nav>
   <!-- /.navbar -->
 
-  <main>
-    @yield('content')
-  </main>
-
- 
+  <div class="content-wrapper background">
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        @yield('content')
+      </div>
+    </div>
+    <!-- /.content -->
+  </div>
 </div>
+
+<footer class="main-footer">
+  <strong>Copyright &copy; 2021 <a href="http://agrowing.co.id">Agrowing.co.id</a>.</strong>
+  Developed by IPB final year students.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Version</b> 1.0.0
+  </div>
+</footer>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->

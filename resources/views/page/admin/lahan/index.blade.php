@@ -21,8 +21,8 @@
           <table class="table table-striped projects">
               <thead>
                 <tr style="background-color:#EB9B04; color:white">
-                  <th style="width: 1%">#</th>
-                  <th style="width: 20%">LOKASI LAHAN</th>
+                  <th style="width: 5%">#</th>
+                  <th style="width: 17%">LOKASI LAHAN</th>
                   <th style="width: 15%">PEMILIK LAHAN</th>
                   <th style="width: 15%">KONTAK</th>
                   <th style="width: 15%">LUAS LAHAN</th>
