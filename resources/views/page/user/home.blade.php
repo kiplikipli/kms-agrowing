@@ -4,7 +4,7 @@
 <section class="section" id="home">
     <div class="">
         <div class="section-title">
-            <h2 class="title">Panduan  HELLPPPPP</h2>
+            <h2 class="title">Panduan</h2>
             <div class="row mt-2">
                 <div class="col-6 col-md-4 col-lg-2 pt-2">
                     <div class="blog position-relative overflow-hidden blog-shadow rounded">
