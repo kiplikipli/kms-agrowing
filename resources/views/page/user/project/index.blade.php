@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="row m-1">
-            <div class="card col-md-3 p-3">
+            <div class="card col-md-4 p-3">
                 <div class="position-relative rounded">
                     <div class="content">
                         <h5>Buah Naga</h5>
@@ -31,7 +31,7 @@
             </div>
             <div class="m-1">
                 </div>
-            <div class="card col-md-3 p-3">
+            <div class="card col-md-4 p-3">
                 <div class="position-relative rounded">
                     <div class="content">
                         <h5>Jambu Biji</h5>

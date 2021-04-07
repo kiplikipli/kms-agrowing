@@ -27,10 +27,12 @@
 
   @yield('css')
   
+  <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('assets/admin/css/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 
   <!-- Bootstrap -->
   <!-- <link href="{{ asset('assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />      -->
+  @PWA
 </head>
 
 <body data-keep-enlarged="false" class="hold-transition sidebar-mini layout-navbar-fixed">

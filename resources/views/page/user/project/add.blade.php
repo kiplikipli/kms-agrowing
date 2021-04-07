@@ -47,17 +47,17 @@
                         <input type="text" class="form-control">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Koordinat</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
                 <!-- Data Blok -->
                 <hr size="1px" width="100%">
                 <div id="data-blok">
                     <div class="m-0">
                         <h5 class="text-bold">Data Blok</h5>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Koordinat</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control">
-                        </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Luas Blok</label>
@@ -87,12 +87,11 @@
                         </div>
                     </div>
                     <hr size="1px" width="100%">
+                    
+                    <div id="data-selanjutnya"></div>
                 </div>
-
-                <div id="data-selanjutnya"></div>
-                
+                                    
                 <div class="btn btn-block btn-success" id="next">+ Tambah Data Blok</div>
-                
             </div>
         </div>
         <div class="row m-2">

@@ -12,27 +12,52 @@
                 <div class="pencatatan1">
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Blok</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control">
+                        <div class="col-lg-6">
+                            <select name="article_id" class="custom-select select2">
+                            <option>Blok 1</option>
+                            <option>Blok 2</option>
+                            <option>Blok 3</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Tanggal</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control">
+                        <div class="input-group date col-lg-6" id="tanggalpencatatan" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#tanggalpencatatan"/>
+                            <div class="input-group-append" data-target="#tanggalpencatatan" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Tahapan Budidaya</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control">
+                        <label for="kegiatan" class="col-sm-2 col-form-label">Tahapan Budidaya</label>
+                        <div class="col-lg-6">
+                            <select name="tahapan_budidaya" class="form-control custom-select" id="tahapan_budidaya" required>
+                            <option selected disabled hidden value="">Pilih Tahapan</option>
+                            <option value="persiapan">Tahap Persiapan Lahan dan Tanaman</option>
+                            <option value="perawatan_belum_menghasilkan">Tahap Perawatan Tanaman Belum Menghasilkan</option>
+                            <option value="perawatan_menghasilkan">Tahap Perawatan Tanaman Menghasilkan</option>
+                            <option value="pemanenan">Tahap Pemanenan</option>
+                            </select>
                         </div>
                     </div>
-                    <div>
+                    <div class="form-group row hide-pemanenan" id="pemanenan">
+                        <label class="col-sm-2 col-form-label">Kegiatan</label>
+                        <div class="col-lg-6">
+                            <div class="form-check col-sm-3">
+                                <input class="form-check-input" type="radio" name="pesiapan">
+                                <label class="form-check-label">Persiapan</label>
+                            </div>
+                            <div class="form-check col-sm-3">
+                                <input class="form-check-input" type="radio" name="panen">
+                                <label class="form-check-label">Panen</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pb-3">
                         <a href="/riwayat">Lihat Riwayat Pencatatan</a>
                     </div>
-
-                    <div class="row mt-3">
+                    <div class="row mt-3 col-lg-8">
                         <div class="col-6" id="batal">
                             <a href="/proyek" class="btn btn-block btn-default float-right waves-effect">Batal</a>
                         </div>
@@ -49,8 +74,26 @@
                      <!-- ceklis dan input data kegiatan -->
                     <div class="form-group">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                          <label class="form-check-label">Penyulaman bibit mati / tumbuh tidak baik</label>
+                          <input class="form-check-input penyulaman" type="checkbox" value="1" onchange="valueChanged()">
+                          <label class="form-check-label" for="penyulaman">Penyulaman bibit mati / tumbuh tidak baik</label>
+                        </div>
+                        <!-- indikator -->
+                        <div class="col-lg-6 hide pl-3 pt-1 indikator">
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="Jumlah bibit mati">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="Jumlah bibit yang tumbuh tidak baik">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="Jumlah orang yang bekerja">
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Pilih gambar</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-check">
                           <input class="form-check-input" type="checkbox">
@@ -85,7 +128,7 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div class="pb-3">
                         <a href="/riwayat">Lihat Riwayat Pencatatan</a>
                     </div>
 
@@ -94,7 +137,7 @@
                             <div class="btn btn-block btn-default" id="back">Kembali</div>
                         </div>
                         <div class="col-6">
-                            <div class="btn btn-block btn-success" id="save">Simpan</div>
+                            <button type="submit" class="btn btn-block btn-success">Simpan</button>
                         </div>
                     </div>
                 </div>
@@ -114,6 +157,32 @@ $(function(){
     $("#back").click(function (e) {
         $(".pencatatan1").show();
         $(".pencatatan2").hide();
+    });
+
+    $(".hide").hide();
+    $(".penyulaman").click(function() {
+        if($(this).is(":checked")) {
+            $(".hide").show(300);
+        } else {
+            $(".hide").hide(200);
+        }
+    });
+
+    //Date range picker
+    $('#tanggalpencatatan').datetimepicker({
+        format: 'L'
+    });
+
+    $(".hide-pemanenan").hide();
+    // Show and hide selected div
+    $('#tahapan_budidaya').change(function () {
+        var value = this.value;
+            
+        $('[name="pemanenan"]').removeAttr('required')
+        $('[name="kegiatan"]').removeAttr('required')
+        $('.hide-pemanenan').hide();
+        $(`#${value}`).show()
+        $(`[name="${value}"]`).attr('required', true)
     });
 });
 </script>

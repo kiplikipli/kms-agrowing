@@ -1,0 +1,84 @@
+.blog {
+    /* border: 0.5px solid #ebebeb; */
+    background-color: white;
+    box-shadow: 0px 2px 20px 10px rgba(0, 0, 0, 0.02);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border: 0.5px solid #EBEBEB;
+}
+
+.blog .content h4 {
+    line-height: 1.2;
+}
+
+.blog .content .title {
+    font-size: 20px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.blog .content .post-meta .like,
+.blog .content .post-meta .comments,
+.blog .content .post-meta .readmore {
+    font-size: 15px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.blog .content .post-meta .like:hover {
+    color: #e43f52 !important;
+}
+
+.blog .content .post-meta .comments:hover {
+    color: #2eca8b !important;
+}
+
+.blog .author {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+/* .blog:hover {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+} */
+
+.blog:hover .overlay {
+    opacity: 0.4;
+}
+
+.blog:hover .author {
+    opacity: 1;
+}
+
+.blog-shadow {
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.02);
+}
+
+.blog .date {
+    position: absolute;
+    left: 15px;
+    bottom: -30px;
+    background-color: #05818d;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 4px 8px;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    overflow-x: hidden !important;
+    font-size: 16px;
+    color: #161c2d;
+}
+
+.content-wrapper{
+background-color: white;
+}

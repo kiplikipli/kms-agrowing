@@ -19,6 +19,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+  @PWA
+  
   <style>
     .navbar-awal{
       background-color:#86BC42
@@ -39,7 +41,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       width: 75%;
     }
   </style>
-
 </head>
 <body data-keep-enlarged="false" class="hold-transition layout-top-nav">
 <div class="wrapper">
