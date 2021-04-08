@@ -71,6 +71,12 @@ Route::get('/profil/edit', function () {
 Route::get('/pencatatan/1', function () {
     return view('page.user.pencatatan.index');
 });
+Route::get('/panduan/buah-naga', function () {
+    return view('page.user.panduan');
+});
+Route::get('/riwayat/1', function () {
+    return view('page.user.riwayat.index');
+});
 
 Auth::routes();
 
