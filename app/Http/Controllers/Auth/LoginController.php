@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helper\ApiHelper;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
+    public $httpClient;
 
     /**
      * Where to redirect users after login.
@@ -25,12 +28,21 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->httpClient = new ApiHelper('/login');
     }
 
-    public function index()
+    public function login(Request $request)
     {
-        $data = Http::post('https://agrowing-api.herokuapp.com/api/v1/login')->json();
+        $this->validateLogin($request);
 
-        return view('auth.login', ['data'=>$data]);
+        $response = $this->httpClient->post([
+            'email' => $request->input('email'),
+            'password' => $request->input('password')
+        ]);
+
+        $request->session()->regenerate();
+        $request->session()->put('token', $response['data']['token']);
+
+        return redirect()->route('sop.index');
     }
 }
