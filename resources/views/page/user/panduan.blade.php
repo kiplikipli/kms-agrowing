@@ -4,18 +4,18 @@
 <section class="section" id="home">
     <div class="">
         <div class="m-1">
-            <h5 class="text-bold">Panduan Budidaya Buah Naga</h5>
+            <h5 class="text-bold">Panduan Budidaya {{ $data['data']['sop_nama'] }}</h5>
             <div class="position-relative">
-                <img src="{{ asset('img/buah-naga.jpg') }}" class="img-fluid" alt="image">
+                <img src="{{ asset('img/jambu-biji.jpg') }}" class="img-fluid" alt="image" style="max-width: 70%;">
             </div>
             <div class="blog position-relative overflow-hidden blog-shadow rounded p-3 m-2">
-                <h3>Informasi Umum</h3>
+                <h5>Informasi Umum</h5>
                 <div class="row">
                     <div class="col-sm-2">
-                        <p>Estimasi panen pertama</p>
+                        <p>Estimasi panen</p>
                     </div>
                     <div class="col-sm-10">
-                        <p>1,5 - 3 tahun</p>
+                        <p>{{ $data['data']['estimasi_panen'] }}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -23,12 +23,12 @@
                         <p>Deskripsi</p>
                     </div>
                     <div class="col-sm-10">
-                        <p>Buah naga adalah buah dari beberapa jenis kaktus dari marga Hylocereus dan Selenicereus. Buah ini berasal dari Meksiko, Amerika Tengah dan Amerika Selatan namun sekarang juga dibudidayakan di negara-negara Asia seperti Taiwan, Vietnam, Filipina, Indonesia dan Malaysia</p>
+                        <p>{{ $data['data']['deskripsi'] }}</p>
                     </div>
                 </div>
             </div>
             <div class="m-3">
-                <h3>Panduan</h3>
+                <h5>Panduan</h5>
             </div>
             <div class="accordion" id="panduanContent">
                 <div class="card card-primary card-outline m-2">

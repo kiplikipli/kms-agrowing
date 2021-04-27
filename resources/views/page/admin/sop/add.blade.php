@@ -14,6 +14,7 @@
 <div class="card-box">
     <div class="card card-info">
         <form class="form-horizontal">
+         @csrf
             <div class="card-body">
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Nama Tanaman</label>
@@ -75,13 +76,6 @@
                                     <label data-browse="upload bukti">HOK <span class="text-danger">*</span></label>
                                     <div class="col-12">
                                         <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    <div></div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">Upload Foto</label>
                                     </div>
                                 </div>
                             </div>

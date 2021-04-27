@@ -4,74 +4,22 @@
 <section class="section" id="home">
     <div class="">
         <div class="m-1">
-            <h5 class="text-bold">Panduan</h5>
+            <h4 class="text-bold">Panduan</h4>
             <div class="row mt-2">
+                @foreach($data as $item)
                 <div class="col-6 col-md-4 col-lg-2 pt-2">
                     <div class="blog position-relative overflow-hidden blog-shadow rounded">
                         <div class="position-relative">
-                            <a href="/panduan/buah-naga">
-                            <img src="{{ asset('img/buah-naga.jpg') }}" class="img-fluid" alt="image"></a>
+                            <a href="/sop">
+                            <img src="{{ asset('img/jambu-biji.jpg') }}" class="img-fluid" alt="image"></a>
                         </div>
-                        <div class="content pt-2">
-                            <h5 class="text-center"><a href="/panduan/buah-naga" class="title">Buah Naga</a></h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 pt-2">
-                    <div class="blog position-relative overflow-hidden blog-shadow rounded">
-                        <div class="position-relative">
-                            <a href="/panduan/buah-naga">
-                            <img src="{{ asset('img/buah-naga.jpg') }}" class="img-fluid" alt="image"></a>
-                        </div>
-                        <div class="content pt-2">
-                            <h5 class="text-center"><a href="/panduan/buah-naga" class="title">Buah Naga</a></h5>
+                        <div class="content pt-1 pr-2 pl-2">
+                            <p class="text-center"><a href="/sop" class="title">{{ $item[0][
+                            'sop_nama'] }}</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2 pt-2">
-                    <div class="blog position-relative overflow-hidden blog-shadow rounded">
-                        <div class="position-relative">
-                            <a href="/panduan/buah-naga">
-                            <img src="{{ asset('img/buah-naga.jpg') }}" class="img-fluid" alt="image"></a>
-                        </div>
-                        <div class="content pt-2">
-                            <h5 class="text-center"><a href="/panduan/buah-naga" class="title">Buah Naga</a></h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 pt-2">
-                    <div class="blog position-relative overflow-hidden blog-shadow rounded">
-                        <div class="position-relative">
-                            <a href="/panduan/buah-naga">
-                            <img src="{{ asset('img/buah-naga.jpg') }}" class="img-fluid" alt="image"></a>
-                        </div>
-                        <div class="content pt-2">
-                            <h5 class="text-center"><a href="/panduan/buah-naga" class="title">Buah Naga</a></h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 pt-2">
-                    <div class="blog position-relative overflow-hidden blog-shadow rounded">
-                        <div class="position-relative">
-                            <a href="/panduan/buah-naga">
-                            <img src="{{ asset('img/buah-naga.jpg') }}" class="img-fluid" alt="image"></a>
-                        </div>
-                        <div class="content pt-2">
-                            <h5 class="text-center"><a href="/panduan/buah-naga" class="title">Buah Naga</a></h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 pt-2">
-                    <div class="blog position-relative overflow-hidden blog-shadow rounded">
-                        <div class="position-relative">
-                            <a href="/panduan/buah-naga">
-                            <img src="{{ asset('img/buah-naga.jpg') }}" class="img-fluid" alt="image"></a>
-                        </div>
-                        <div class="content pt-2">
-                            <h5 class="text-center"><a href="/panduan/buah-naga" class="title">Buah Naga</a></h5>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

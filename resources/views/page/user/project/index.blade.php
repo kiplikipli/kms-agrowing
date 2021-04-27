@@ -7,7 +7,7 @@
             <h5 class="m-0 text-bold">Penanaman Saat Ini</h5>
         </div>
         <div class="col-5">
-            <a class="btn btn-success waves-light waves-effect float-right" href="/proyek/tambah">Buat Proyek</a>
+            <a class="btn btn-primary waves-light waves-effect float-right" href="/proyek/tambah">Buat Proyek</a>
         </div>
     </div>
     <div class="row m-1">
@@ -18,10 +18,10 @@
                     <p>10 November 2020 - sekarang</p>
                     <div class="row btn-group" style="margin:auto">
                         <div class="py-1 px-1">
-                            <a class="btn btn-success waves-light waves-effect" href="/pencatatan/1">Catat Aktivitas</a>
+                            <a class="btn btn-primary waves-light waves-effect" href="/pencatatan/1">Catat Aktivitas</a>
                         </div>
                         <div class="py-1 px-1">
-                            <a class="btn btn-primary " href="/riwayat/1">Lihat Detail</a>
+                            <a class="btn btn-info " href="/riwayat/1">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
@@ -34,10 +34,10 @@
                     <p>10 Desember 2020 - sekarang</p>
                     <div class="row btn-group" style="margin:auto">
                         <div class="py-1 px-1">
-                            <a class="btn btn-success waves-light waves-effect" href="#">Catat Aktivitas</a>
+                            <a class="btn btn-primary waves-light waves-effect" href="#">Catat Aktivitas</a>
                         </div>
                         <div class="py-1 px-1">
-                            <a class="btn btn-primary waves-light waves-effect" href="/riwayat/1">Lihat Detail</a>
+                            <a class="btn btn-info waves-light waves-effect" href="/riwayat/1">Lihat Detail</a>
                         </div>
                     </div>
                 </div>

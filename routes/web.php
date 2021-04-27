@@ -47,15 +47,13 @@ Route::get('/admin/sop/tambah', function () {
 });
 
 // ====== Route untuk Manajer Kebun ======
-Route::get('/', function () {
-    return view('page.user.home');
-});
+
 Route::get('/proyek', function () {
     return view('page.user.project.index');
 });
-Route::get('/proyek/tambah', function () {
-    return view('page.user.project.add');
-});
+// Route::get('/proyek/tambah', function () {
+//     return view('page.user.project.add');
+// });
 Route::get('/konsultasi', function () {
     return view('page.user.konsultasi.index');
 });
@@ -81,5 +79,17 @@ Route::get('/riwayat/1', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', "SOPController@index");
+Route::get('/sop', "SOPController@show");
+
+Route::get('/proyek/tambah', 'ProjectController@index');
+
+Route::get('/login', 'LoginController@index')->name('login');
+Route::get('/logout', 'LogoutController@index')->name('logout');
+
+Route::middleware('auth:api')->get('/user', function (Request $request){
+    return $request->user();
+});
 
 \PWA::routes();

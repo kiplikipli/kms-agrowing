@@ -3,7 +3,7 @@
 @section('header')
 <div class="card card-primary card-outline">
     <div class="card-header">
-        <h1 class="card-title">Buat Proyek Tanam</h1>
+        <h2 class="card-title"><strong>Buat Proyek Tanam</strong></h2>
     </div> <!-- /.card-body -->
     <form class="form-horizontal">
         <div class="card-body">
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Jumlah Pokok Tanaman</label>
+                        <label class="col-sm-2 col-form-label">Jml Pokok Tanaman</label>
                         <div class="input-group col-sm-2">
                             <input type="text" class="form-control">
                             <div class="input-group-append">

@@ -36,19 +36,19 @@
         </div>
         <div class="card " style="margin-top: 10px;">
             <form action="#" method="GET" style="margin: 20px;" class="row">
-            <div class="input-group date col-lg-3" >
-    			<select name="blok_id" id="input" class="form-control mb-1">
-                    <option value="">Blok 1</option>
-                    <option value="">Blok 2</option>
-    			</select>
-</div>
+                <div class="input-group date col-lg-3" >
+                    <select name="blok_id" id="input" class="form-control mb-1">
+                        <option value="">Blok 1</option>
+                        <option value="">Blok 2</option>
+                    </select>
+                </div>
                 <div class="input-group date col-lg-3 mb-1" id="tanggalpencatatan" data-target-input="nearest">
                     <input type="text" class="form-control datetimepicker-input" data-target="#tanggalpencatatan"/>
                     <div class="input-group-append" data-target="#tanggalpencatatan" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
                 </div>
-	    		<input type="submit" class="btn btn-success btn-sm mb-1" value="Filter">
+	    		<input type="submit" class="btn btn-primary btn-sm mb-1" value="Filter">
 	    	</form>
         </div>
     </div>
