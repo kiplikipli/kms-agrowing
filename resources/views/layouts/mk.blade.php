@@ -45,6 +45,27 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
+    <div class="navbar-custom ml-auto">
+      <ul class="list-unstyled topnav-menu float-right mb-0">        
+          <li class="dropdown notification-list">
+              <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false" style="color:black">
+                  <span class="ml-1">
+                      MK <i class="mdi mdi-chevron-down"></i> 
+                  </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                  <!-- item-->
+                  <form action="#" method="post">
+                      @csrf
+                      <button type="submit" class="dropdown-item notify-item">
+                          <i class="fe-log-out"></i> <span>Logout</span>
+                      </button>
+                  </form>
+                  
+              </div>
+          </li>
+      </ul>
+    </div>
 
     <!-- <form class="form-inline ml-3">
         <div class="input-group input-group-sm">

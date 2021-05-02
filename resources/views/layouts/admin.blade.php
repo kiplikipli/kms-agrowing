@@ -46,6 +46,27 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
+    <div class="navbar-custom ml-auto">
+      <ul class="list-unstyled topnav-menu float-right mb-0">        
+          <li class="dropdown notification-list">
+              <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false" style="color:black">
+                  <span class="ml-1">
+                      Admin <i class="mdi mdi-chevron-down"></i> 
+                  </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                  <!-- item-->
+                  <form action="#" method="post">
+                      @csrf
+                      <button type="submit" class="dropdown-item notify-item">
+                          <i class="fe-log-out"></i> <span>Logout</span>
+                      </button>
+                  </form>
+                  
+              </div>
+          </li>
+      </ul>
+    </div>
 
     <!-- SEARCH FORM -->
     <!-- <form class="form-inline ml-3">
@@ -60,14 +81,14 @@
     </form> -->
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+    <!-- <ul class="navbar-nav ml-auto"> -->
       <!-- Messages Dropdown Menu -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
         </a>
       </li>
-    </ul>
+    </ul> -->
   </nav>
   <!-- /.navbar -->
 
