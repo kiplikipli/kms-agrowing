@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use RealRashid\SweetAlert\Facades\Alert;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -50,6 +51,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception instanceof ApiException) {
+            if ($exception->type == 'login') {
+                Alert::error("Gagal", $exception->getMessage());
+                return redirect()->route('login');
+            }
+        }
         return parent::render($request, $exception);
     }
 }

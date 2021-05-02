@@ -20,75 +20,77 @@ Route::get('/template', function () {
     return view('template');
 });
 
-// ====== Route untuk Admin ======
-Route::get('/admin', function () {
-    return view('page.admin.dashboard');
-});
-Route::get('/admin/sop', function () {
-    return view('page.admin.sop.index');
-});
-Route::get('/admin/laporan', function () {
-    return view('page.admin.laporan_harian.index');
-});
-Route::get('/admin/petani', function () {
-    return view('page.admin.petani.index');
-});
-Route::get('/admin/petani/tambah', function () {
-    return view('page.admin.petani.add');
-});
-Route::get('/admin/lahan', function () {
-    return view('page.admin.lahan.index');
-});
-Route::get('/admin/sop', function () {
-    return view('page.admin.sop.index');
-});
-Route::get('/admin/sop/tambah', function () {
-    return view('page.admin.sop.add');
-});
+Route::middleware('auth-api')->group(function () {
+    // ====== Route untuk Admin ======
+    Route::get('/admin', function () {
+        return view('page.admin.dashboard');
+    });
+    Route::get('/admin/sop', function () {
+        return view('page.admin.sop.index');
+    });
+    Route::get('/admin/laporan', function () {
+        return view('page.admin.laporan_harian.index');
+    });
+    Route::get('/admin/petani', function () {
+        return view('page.admin.petani.index');
+    });
+    Route::get('/admin/petani/tambah', function () {
+        return view('page.admin.petani.add');
+    });
+    Route::get('/admin/lahan', function () {
+        return view('page.admin.lahan.index');
+    });
+    Route::get('/admin/sop', function () {
+        return view('page.admin.sop.index');
+    });
+    Route::get('/admin/sop/tambah', function () {
+        return view('page.admin.sop.add');
+    });
 
-// ====== Route untuk Manajer Kebun ======
+    // ====== Route untuk Manajer Kebun ======
 
-Route::get('/proyek', function () {
-    return view('page.user.project.index');
-});
-// Route::get('/proyek/tambah', function () {
-//     return view('page.user.project.add');
-// });
-Route::get('/konsultasi', function () {
-    return view('page.user.konsultasi.index');
-});
-Route::get('/konsultasi/tambah', function () {
-    return view('page.user.konsultasi.add');
-});
-Route::get('/profil', function () {
-    return view('page.user.profile.index');
-});
-Route::get('/profil/edit', function () {
-    return view('page.user.profile.edit');
-});
-Route::get('/pencatatan/1', function () {
-    return view('page.user.pencatatan.index');
-});
-Route::get('/panduan/buah-naga', function () {
-    return view('page.user.panduan');
-});
-Route::get('/riwayat/1', function () {
-    return view('page.user.riwayat.index');
+    Route::get('/proyek', function () {
+        return view('page.user.project.index');
+    });
+    // Route::get('/proyek/tambah', function () {
+    //     return view('page.user.project.add');
+    // });
+    Route::get('/konsultasi', function () {
+        return view('page.user.konsultasi.index');
+    });
+    Route::get('/konsultasi/tambah', function () {
+        return view('page.user.konsultasi.add');
+    });
+    Route::get('/profil', function () {
+        return view('page.user.profile.index');
+    });
+    Route::get('/profil/edit', function () {
+        return view('page.user.profile.edit');
+    });
+    Route::get('/pencatatan/1', function () {
+        return view('page.user.pencatatan.index');
+    });
+    Route::get('/panduan/buah-naga', function () {
+        return view('page.user.panduan');
+    });
+    Route::get('/riwayat/1', function () {
+        return view('page.user.riwayat.index');
+    });
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/', "SOPController@index")->name('sop.index');
+    Route::get('/sop', "SOPController@show");
+
+    Route::get('/proyek/tambah', 'ProjectController@index');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/login', 'LoginController@index')->name('login');
+// Route::get('/logout', 'LogoutController@index')->name('logout');
 
-Route::get('/', "SOPController@index");
-Route::get('/sop', "SOPController@show");
-
-Route::get('/proyek/tambah', 'ProjectController@index');
-
-Route::get('/login', 'LoginController@index')->name('login');
-Route::get('/logout', 'LogoutController@index')->name('logout');
-
-Route::middleware('auth:api')->get('/user', function (Request $request){
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
