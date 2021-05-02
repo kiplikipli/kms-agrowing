@@ -12,6 +12,16 @@ class ProjectController extends Controller
     {
         $data = Http::get('https://agrowing-api.herokuapp.com/api/v1/sop')->json();
 
-        return view('page.user.project.add', ['data'=>$data]);
+        return view('page.user.project.add', ['data' => $data]);
+    }
+
+    public function create()
+    {
+        return view('page.user.project.add');
+    }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
     }
 }

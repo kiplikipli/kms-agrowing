@@ -82,7 +82,8 @@ Route::middleware('auth-api')->group(function () {
     Route::get('/', "SOPController@index")->name('sop.index');
     Route::get('/sop', "SOPController@show");
 
-    Route::get('/proyek/tambah', 'ProjectController@index');
+    Route::get('/proyek/tambah', 'ProjectController@create')->name('project.create');
+    Route::post('/proyek/tambah', 'ProjectController@store')->name('project.store');
 });
 
 Auth::routes();
