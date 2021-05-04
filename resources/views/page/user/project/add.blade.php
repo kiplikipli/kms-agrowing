@@ -16,15 +16,20 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Nama Tanaman</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="nama_tanaman">
+                        <select class="select2" name="sop_id">
+                            <option value="">Pilih Tanaman</option>
+                            @foreach ($listSop as $sop)
+                            <option value="{{$sop['id']}}">{{$sop['sop_nama']}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
-                <div class="form-group row">
+                {{-- <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Tahap Pencatatan Awal</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" name="tahap_pencatatan_awal">
                     </div>
-                </div>
+                </div> --}}
                 <!-- Data Lahan -->
                 <hr size="1px" width="100%">
                 <div class="m-0">
@@ -36,7 +41,7 @@
                         <textarea class="form-control" rows="3" placeholder="" name="alamat"></textarea>
                     </div>
                 </div>
-                <div class="form-group row">
+                {{-- <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Provinsi</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" name="provinsi">
@@ -53,7 +58,7 @@
                     <div class="col-sm-9">
                         <input type="text" class="form-control" name="koordinat">
                     </div>
-                </div>
+                </div> --}}
                 <!-- Data Blok -->
                 <hr size="1px" width="100%">
                 <div id="data-blok">

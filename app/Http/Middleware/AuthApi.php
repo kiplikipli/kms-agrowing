@@ -17,10 +17,10 @@ class AuthApi
      */
     public function handle($request, Closure $next, $role = null)
     {
-        // dd($request->session()->all());
-        // $httpClient = new ApiHelper('getUser',)
-        $isUnauthorized = false;
-        if ($isUnauthorized) {
+        $httpClient = new ApiHelper('/user', $request->session()->get('token'));
+
+        $response = $httpClient->get();
+        if ($response['response']->failed()) {
             $request->session()->remove('token');
         }
 
@@ -28,6 +28,10 @@ class AuthApi
             Alert::error("Gagal", "Silahkan login terlebih dahulu");
             return redirect()->route('login');
         }
+
+        $request->attributes->add([
+            'user' => $response['body']['user']
+        ]);
 
         return $next($request);
     }

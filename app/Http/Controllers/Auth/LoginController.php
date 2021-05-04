@@ -7,11 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
-    public $httpClient;
 
     /**
      * Where to redirect users after login.
@@ -28,21 +28,40 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->httpClient = new ApiHelper('/login');
     }
 
     public function login(Request $request)
     {
         $this->validateLogin($request);
+        $httpClient = new ApiHelper('/login');
 
-        $response = $this->httpClient->post([
+        $response = $httpClient->post([
             'email' => $request->input('email'),
             'password' => $request->input('password')
         ]);
 
+        if ($response['response']->failed()) {
+            throw new ApiException('login', $response['body']->message);
+        }
+
         $request->session()->regenerate();
-        $request->session()->put('token', $response['data']['token']);
+        $request->session()->put('token', $response['body']['data']['token']);
 
         return redirect()->route('sop.index');
+    }
+
+    public function logout(Request $request)
+    {
+        $httpClient = new ApiHelper('/logout');
+        $response = $httpClient->post();
+
+        if ($response['response']->failed()) {
+            Alert::error("Gagal", "Kesalahan server");
+            return redirect()->back();
+        }
+
+        $request->session()->remove('token');
+        Alert::success("Berhasil", "Berhasil logout");
+        return redirect()->route('login');
     }
 }

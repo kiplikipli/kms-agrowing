@@ -18,6 +18,10 @@ class SOPController extends Controller
     public function index()
     {
         $data = $this->httpClient->get();
+        if ($data['response']->failed()) {
+            abort(500);
+        }
+        $data = $data['body'];
 
         return view('page.user.home', compact('data'));
     }

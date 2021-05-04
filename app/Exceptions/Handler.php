@@ -52,10 +52,21 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         if ($exception instanceof ApiException) {
-            if ($exception->type == 'login') {
-                Alert::error("Gagal", $exception->getMessage());
-                return redirect()->route('login');
+            switch ($exception->type) {
+                case 'login':
+                    $route = 'login';
+                    break;
+
+                case 'storeProject':
+                    $route = 'project.create';
+                    break;
+
+                default:
+                    $route = 'login';
+                    break;
             }
+            Alert::error("Gagal", $exception->getMessage());
+            return redirect()->route($route);
         }
         return parent::render($request, $exception);
     }

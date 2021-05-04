@@ -51,7 +51,7 @@ Route::middleware('auth-api')->group(function () {
 
     Route::get('/proyek', function () {
         return view('page.user.project.index');
-    });
+    })->name('project.index');
     // Route::get('/proyek/tambah', function () {
     //     return view('page.user.project.add');
     // });

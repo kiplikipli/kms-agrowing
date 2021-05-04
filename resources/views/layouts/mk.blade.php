@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
   @yield('css')
   
@@ -50,12 +52,12 @@
           <li class="dropdown notification-list">
               <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false" style="color:black">
                   <span class="ml-1">
-                      MK <i class="mdi mdi-chevron-down"></i> 
+                      {{ \Request::get('user')['name'] }} <i class="mdi mdi-chevron-down"></i> 
                   </span>
               </a>
               <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                   <!-- item-->
-                  <form action="#" method="post">
+                  <form action="{{route('logout')}}" method="post">
                       @csrf
                       <button type="submit" class="dropdown-item notify-item">
                           <i class="fe-log-out"></i> <span>Logout</span>
@@ -229,5 +231,18 @@
 <script src="{{ asset('js/adminlte.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('js/pages/dashboard.js') }}"></script>
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.select2').select2({
+      width: '100%'
+    });
+  });
+</script>
+
+@include('sweetalert::alert')
+
 </body>
 </html>
